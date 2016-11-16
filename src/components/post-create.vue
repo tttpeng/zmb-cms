@@ -1,0 +1,29 @@
+<template lang="html">
+  <div class="">
+    <v-editor :input-content="inputContent" :upload-url="uploadUrl" v-model="outputContent"></v-editor>
+    <input type="button" name="name" value="submit" @click="submit">
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        // input content to editor
+        inputContent: 'base on wangeditor',
+        // output content from editor
+        outputContent: '',
+        // set image upload api url
+        uploadUrl: '/api/v1/help/upload/wangEditorH5File',
+      };
+    },
+    computed: {},
+    ready() {},
+    attached() {},
+    methods: {
+      submit() {
+        console.log('提交');
+        console.log(this.outputContent);
+      },
+    },
+  };
+</script>
